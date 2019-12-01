@@ -1,7 +1,11 @@
 <?php 
  require_once 'classe-pessoa.php';
+<<<<<<< HEAD
  $p = new Pessoa("crudpdo","localhost","root","");
 ?>
+=======
+ //$p = new Pessoa("crudpdo","localhost","root","");
+>>>>>>> d3148bf2091c063891ec9aaefd6153cf4ca1845a
 
 <!DOCTYPE html>
 <html lang="pt-br">
