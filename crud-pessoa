@@ -1,6 +1,6 @@
 <?php 
  require_once 'classe-pessoa.php';
- //$p = new Pessoa("crudpdo","localhost","root","");
+ $p = new Pessoa("crudpdo","localhost","root","");
  $p = new Pessoa("crudpdo","db4free.net:3306","progtec","progtec2012");
 
 ?>
