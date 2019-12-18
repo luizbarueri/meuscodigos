@@ -1,0 +1,99 @@
+function Dados(){
+    //var prod = parseFloat(prompt("Produto:","Teclado Alfanumerico digilab"));
+    var valor=0, produto="";
+    produto = "Teclado Alfanumerico digilab";
+    valor=parseFloat(prompt(produto,"100"));
+    document.getElementById("txtProduto").value = produto;
+    document.getElementById("txtValor").value = valor;
+    document.getElementById("txtQtd").value = "05";
+    document.getElementById("txtCat").value = "Desktop";
+}
+
+function Tabuada(){
+    var n = parseInt(prompt("Tabuada do Número:",6));
+    var x="", res="";
+    for (var i = 1; i <= 10; i++) {
+      res = i + " x " + n + " = " + i*n;
+      x="x"+i;
+      document.getElementById(x).innerHTML=res;
+    }
+}
+
+function MultiplixcaPorDois(){
+    var forca=[];
+    var res="";
+    for(i=1;i<=10;i++){
+        forca[i]=i*2;
+        if(i==1){
+            res=forca[i];
+        }
+        else{
+            res=res + "," + forca[i];
+        }
+    }
+    document.getElementById("demo").innerHTML = "Números de 1 a 10 multiplicado por 2: [" + res +"]";
+}
+function isNumeric(str){
+    var er = /^[0-9]+$/;  
+    return (er.test(str));
+}     
+function TipoVariavel(){
+    var lenght=16; //Number
+    var Usuario="Luiz"; //SWtring
+    var x={Nome:"Marisa",Idade:16}; //Object
+    document.getElementById("var-number").innerHTML="var lenght=16 //Number";
+    document.getElementById("var-string").innerHTML="var Usuario='Luiz' //String";
+    document.getElementById("var-object").innerHTML="var x={Nome:'Marisa',Idade:16} //Object";
+    document.getElementById("div-tipo-variavel").style="color:yellow";
+    document.getElementById("teste-object").innerHTML = "Nome: " + x.Nome + " Idade: " + x.Idade;
+}
+function tabelaCarro(){
+    var tamStr="";
+    var tabelaCarro = {
+        id:1,
+        carro:"Corsa 1.6 GL",
+        marca:"FIAT",
+        placa:"FIA-5634",
+        listaCarro: function(){
+            document.getElementById("id").innerHTML= this.id;
+            document.getElementById("carro").innerHTML= this.carro;
+            document.getElementById("marca").innerHTML= this.marca;
+            document.getElementById("placa").innerHTML= this.placa;
+        }
+    };
+    var pos1="", pos2="",busca="";
+    tamStr = tabelaCarro.id + " " + tabelaCarro.carro + " " + tabelaCarro.marca + " " + tabelaCarro.placa;
+    pos1 = tamStr.indexOf("6",0);
+    pos2 = tamStr.lastIndexOf("6",28);
+    busca = tamStr.search("FIAT");
+    
+    document.getElementById("tamReg").innerHTML = tamStr + 
+    "<br> tem " + tamStr.length +
+    " letras <br>" + "posicão da primeira letra '6': " +
+    pos1 + "<br>"  + "posicão da ultima letra '6': " + pos2 +
+    "<br>" + "marca FIAT na posição: " + busca  + "<br> parte do registro: " + tamStr.slice(2,11); 
+    return tabelaCarro.listaCarro();
+    //pega o conteudo das textboxm  ou input type-"text"
+}
+function pegaEntradas(){
+    var id=0,carro="",placa="",marca="";
+    id=document.getElementById("txtID").value;
+    carro="CoroLla - Corolla"; //document.getElementById("txtCarro").value;
+    placa=document.getElementById("txtPlaca").value;
+    marca=document.getElementById("txtMarca").value;
+    document.getElementById("l1").innerHTML=id;
+    document.getElementById("l2").innerHTML=carro;
+    document.getElementById("l3").innerHTML=placa;
+    document.getElementById("l4").innerHTML=marca;
+    var troca="OpalaComodoro";
+    var aux="";
+    alert("Carro: " + carro + " Vai ser trocado " + troca);
+    //enontra e subtitui mas diferencia min. de maiu.
+    //------document.getElementById("l2").innerHTML=carro.replace(carro,troca);
+    //enontra e subtitui mas com /i -- NÂO diferencia min. de maiu.
+    //enontra e subtitui todos com /g -- MAS diferencia min. de maiu.
+    //carro="/" + carro + "/i";
+    aux=carro.replace(/Corolla/g,troca);
+    document.getElementById("l2").innerHTML=carro;
+    document.getElementById("txtCarro").value=aux; 
+}
